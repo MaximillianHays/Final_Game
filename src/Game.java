@@ -66,7 +66,7 @@ public class Game{
 	private int loc = 1;
 	private String output = "";
 	private static final Game GAME = new Game();
-	
+	//test
 	public static void main(String args[]){
 		try {
 			GAME.play();

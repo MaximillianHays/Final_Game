@@ -6,44 +6,44 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Game{
-	private int HP = 10;
-	private int SP = 1;
-	private int DEF = 0;
-	private int AC = 0;
-	private int ATK = 0;
-	private int SPD = 1;
-	private int tHP = HP;
-	private int tSP = SP;
-	private int tATK = ATK;
-	private int tDEF = DEF;
+	private int hp = 10;
+	private int sp = 1;
+	private int def = 0;
+	private int ac = 0;
+	private int atk = 0;
+	private int spd = 1;
+	private int tHp = hp;
+	private int tSp = sp;
+	private int tAtk = atk;
+	private int tDef = def;
 	private boolean nutritiousWater = false;
 	private boolean scorch = false;
 	private boolean vineShield = false;
 	private boolean cure = false;
 	private boolean flare = false;
 	private boolean vineTrap = false;
-	private int XP;
-	private int XPG = 10;
-	private int XPR = 10;
-	private int XPI = 20;
-	private int LVUP;
-	private int LV = 1;
-	private int G = 0;
+	private int xp;
+	private int xpg = 10;
+	private int xpr = 10;
+	private int xpi = 20;
+	private int lvup;
+	private int lv = 1;
+	private int g = 0;
 	private boolean gems = false;
-	private int POW;
-	private int gPOW;
-	private int bPOW;
-	private int mPOW;
-	private int ST;
-	private int yST;
-	private int BT;
-	private int yPT;
-	private boolean Skip = false;
-	private int eHP;
-	private int eMAXHP = eHP;
-	private int eDEF;
-	private int eSPD;
-	private int eXP;
+	private int pow;
+	private int gPow;
+	private int bPow;
+	private int mPow;
+	private int st;
+	private int ySt;
+	private int bt;
+	private int yPt;
+	private boolean skip = false;
+	private int eHp;
+	private int eMaxhp = eHp;
+	private int eDef;
+	private int eSpd;
+	private int eXp;
 	private int eG;
 	private String Earmor = "Nothing";
 	private String Egloves = "Nothing";
@@ -317,159 +317,159 @@ public class Game{
 	private void battle(String eNAME){
 		switch (eNAME){
 		case "green slime":
-			eHP = 5;
-			eDEF = 0;
-			eSPD = 1;
-			eXP = 2;
+			eHp = 5;
+			eDef = 0;
+			eSpd = 1;
+			eXp = 2;
 			eG = 2;
 			break;
 		case "yellow slime":
-			eHP = 10;
-			eDEF = 0;
-			eSPD = 2;
-			eXP = 4;
+			eHp = 10;
+			eDef = 0;
+			eSpd = 2;
+			eXp = 4;
 			eG = 4;
 			break;
 		case "red slime":
-			eHP = 25;
-			eDEF = 0;
-			eSPD = 5;
-			eXP = 10;
+			eHp = 25;
+			eDef = 0;
+			eSpd = 5;
+			eXp = 10;
 			eG = 10;
 			break;
 		case "goblin":
-			eHP = 10;
-			eDEF = 0;
-			eSPD = 1;
-			eXP = 4;
+			eHp = 10;
+			eDef = 0;
+			eSpd = 1;
+			eXp = 4;
 			eG = 4;
 			break;
 		case "elite goblin":
-			eHP = 20;
-			eDEF = 0;
-			eSPD = 2;
-			eXP = 8;
+			eHp = 20;
+			eDef = 0;
+			eSpd = 2;
+			eXp = 8;
 			eG = 8;
 			break;
 		case "goblin warlord":
-			eHP = 50;
-			eDEF = 0;
-			eSPD = 5;
-			eXP = 20;
+			eHp = 50;
+			eDef = 0;
+			eSpd = 5;
+			eXp = 20;
 			eG = 20;
 			break;
 		case "squid":
-			eHP = 7;
-			eDEF = 0;
-			eSPD = 1;
-			eXP = 4;
+			eHp = 7;
+			eDef = 0;
+			eSpd = 1;
+			eXp = 4;
 			eG = 5;
 			break;
 		case "octopus":
-			eHP = 14;
-			eDEF = 0;
-			eSPD = 2;
-			eXP = 8;
+			eHp = 14;
+			eDef = 0;
+			eSpd = 2;
+			eXp = 8;
 			eG = 10;
 			break;
 		case "kraken":
-			eHP = 35;
-			eDEF = 0;
-			eSPD = 5;
-			eXP = 20;
+			eHp = 35;
+			eDef = 0;
+			eSpd = 5;
+			eXp = 20;
 			eG = 20;
 			break;
 		case "spider":
-			eHP = 9;
-			eDEF = 0;
-			eSPD = 3;
-			eXP = 5;
+			eHp = 9;
+			eDef = 0;
+			eSpd = 3;
+			eXp = 5;
 			eG = 4;
 			break;
 		case "wolf spider":
-			eHP = 18;
-			eDEF = 0;
-			eSPD = 6;
-			eXP = 10;
+			eHp = 18;
+			eDef = 0;
+			eSpd = 6;
+			eXp = 10;
 			eG = 8;
 			break;
 		case "tarantula":
-			eHP = 45;
-			eDEF = 0;
-			eSPD = 15;
-			eXP = 25;
+			eHp = 45;
+			eDef = 0;
+			eSpd = 15;
+			eXp = 25;
 			eG = 20;
 			break;
 		case "snake":
-			eHP = 7;
-			eDEF = 1;
-			eSPD = 2;
-			eXP = 5;
+			eHp = 7;
+			eDef = 1;
+			eSpd = 2;
+			eXp = 5;
 			eG = 4;
 			break;
 		case "cobra":
-			eHP = 14;
-			eDEF = 2;
-			eSPD = 4;
-			eXP = 10;
+			eHp = 14;
+			eDef = 2;
+			eSpd = 4;
+			eXp = 10;
 			eG = 8;
 			break;
 		case "python":
-			eHP = 35;
-			eDEF = 5;
-			eSPD = 10;
-			eXP = 25;
+			eHp = 35;
+			eDef = 5;
+			eSpd = 10;
+			eXp = 25;
 			eG = 20;
 			break;
 		case "ogre":
-			eHP = 25;
-			eDEF = 1;
-			eSPD = 2;
-			eXP = 30;
+			eHp = 25;
+			eDef = 1;
+			eSpd = 2;
+			eXp = 30;
 			eG = 30;
 			break;
 		case "elite ogre":
-			eHP = 50;
-			eDEF = 2;
-			eSPD = 4;
-			eXP = 60;
+			eHp = 50;
+			eDef = 2;
+			eSpd = 4;
+			eXp = 60;
 			eG = 60;
 			break;
 		case "ogre warlord":
-			eHP = 125;
-			eDEF = 5;
-			eSPD = 10;
-			eXP = 150;
+			eHp = 125;
+			eDef = 5;
+			eSpd = 10;
+			eXp = 150;
 			eG = 150;
 			break;
 		}
-		tATK = ATK;
-		tDEF = DEF + AC;
-		eMAXHP = eHP;
-		Skip = false;
+		tAtk = atk;
+		tDef = def + ac;
+		eMaxhp = eHp;
+		skip = false;
 		while (true) {
-			if (SPD >= eSPD){
-				if (yST == 0){
-					String choice = JOptionPane.showInputDialog("You have " + tHP + "/" + HP + " HP and " + tSP + "/" + SP + " SP.  The " + eNAME + " has " + eHP + "/" + eMAXHP + " HP and " + eDEF + " DEF.  Press l for a list of actions.");
+			if (spd >= eSpd){
+				if (ySt == 0){
+					String choice = JOptionPane.showInputDialog("You have " + tHp + "/" + hp + " HP and " + tSp + "/" + sp + " SP.  The " + eNAME + " has " + eHp + "/" + eMaxhp + " HP and " + eDef + " DEF.  Press l for a list of actions.");
 					if (choice.equals("l")){
-						output = "Punch does " + (2 + gPOW + ATK) + " damage (p).\nKick does " + (1 + bPOW + ATK) + " damage and stuns the enemy 50% of the time (k).";
+						output = "Punch does " + (2 + gPow + atk) + " damage (p).\nKick does " + (1 + bPow + atk) + " damage and stuns the enemy 50% of the time (k).";
 						if (nutritiousWater){
-							output += "\nNutritious Water heals " + (5 + mPOW) + " HP and uses 1 SP (nw).";
+							output += "\nNutritious Water heals " + (5 + mPow) + " HP and uses 1 SP (nw).";
 						}
 						if (scorch){
-							output += "\nScorch does " + (3 + mPOW + ATK) + " damage and burns the enemy for 2 turns " + (50 + mPOW * 10) + "% of the time and uses 1 SP (s).";
+							output += "\nScorch does " + (3 + mPow + atk) + " damage and burns the enemy for 2 turns " + (50 + mPow * 10) + "% of the time and uses 1 SP (s).";
 						}
 						if (vineShield){
-							output += "\nVine Shield increases your defense by 1 for the duration of the battle and uses " + damage(tDEF, 1, mPOW) + " SP. The cost increases with higher defense (vs).";
+							output += "\nVine Shield increases your defense by 1 for the duration of the battle and uses " + damage(tDef, 1, mPow) + " SP. The cost increases with higher defense (vs).";
 						}
 						if (cure){
-							output += "\nCure heals " + (10 + mPOW * 3) + " HP, cures poison, and uses 3 SP (c).";
+							output += "\nCure heals " + (10 + mPow * 3) + " HP, cures poison, and uses 3 SP (c).";
 						}
 						if (flare){
-							output += "\nFlare burns the enemy for " + (5 + mPOW) + " turns and uses 1 SP (f).";
+							output += "\nFlare burns the enemy for " + (5 + mPow) + " turns and uses 1 SP (f).";
 						}
 						if (vineTrap){
-							output += "\nVine Trap stuns the enemy for 3 turns, has a " + (50 + mPOW * 10) + "% chance to reduce its defense by 1 for the duration of the battle, and uses 3 SP. (vt).";
+							output += "\nVine Trap stuns the enemy for 3 turns, has a " + (50 + mPow * 10) + "% chance to reduce its defense by 1 for the duration of the battle, and uses 3 SP. (vt).";
 						}
 						if(LHPp == 1){
 							output += "\nYou can use your lesser health potion to heal 5 HP (h1).";
@@ -521,85 +521,85 @@ public class Game{
 						}
 						JOptionPane.showMessageDialog(null, output);
 						output = "";
-						Skip = true;
+						skip = true;
 					}else if (choice.equals("p")){
-						POW = 2 + gPOW;
-						JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + damage(POW, tATK, eDEF) + " damage!");
-						eHP -= damage(POW, tATK, eDEF);
+						pow = 2 + gPow;
+						JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + damage(pow, tAtk, eDef) + " damage!");
+						eHp -= damage(pow, tAtk, eDef);
 					}else if (choice.equals("k")) {
-						POW = 1 + bPOW;
-						JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + damage(POW, tATK, eDEF) + " damage!");
-						eHP -= damage(POW, tATK, eDEF);
+						pow = 1 + bPow;
+						JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + damage(pow, tAtk, eDef) + " damage!");
+						eHp -= damage(pow, tAtk, eDef);
 						if ((Math.random()) * 10 < 5){
-							ST++;
-							JOptionPane.showMessageDialog(null, "The " + eNAME + " cannot move for " + ST + " turn(s)!");
+							st++;
+							JOptionPane.showMessageDialog(null, "The " + eNAME + " cannot move for " + st + " turn(s)!");
 						}
 					}else if (choice.equals ("nw") && nutritiousWater){
-						if (tSP > 0){
-							if(healHP(5 + mPOW)){
-								tSP--;
+						if (tSp > 0){
+							if(healHP(5 + mPow)){
+								tSp--;
 							}
 						}else{
 							JOptionPane.showMessageDialog(null, "You don't have enough SP!");
-							Skip = true;
+							skip = true;
 						}
 					}else if (choice.equals ("s") && scorch) {
-						if (tSP > 0){
-							POW = 3 + mPOW;
-							JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + damage(POW, tATK, eDEF) + " damage!");
-							eHP -= damage(POW, tATK, eDEF);
-							if ((Math.random()) * 100 < 50 + mPOW * 10){
-								BT += 2;
+						if (tSp > 0){
+							pow = 3 + mPow;
+							JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + damage(pow, tAtk, eDef) + " damage!");
+							eHp -= damage(pow, tAtk, eDef);
+							if ((Math.random()) * 100 < 50 + mPow * 10){
+								bt += 2;
 								JOptionPane.showMessageDialog(null, "The " + eNAME + " was burned for 2 turns!");
 							}
-							tSP--;
+							tSp--;
 						}else{
 							JOptionPane.showMessageDialog(null, "You don't have enough SP!");
-							Skip = true;
+							skip = true;
 						}
 					}else if (choice.equals ("vs") && vineShield) {
-						if(tSP + mPOW > tDEF){
+						if(tSp + mPow > tDef){
 							JOptionPane.showMessageDialog(null,"Your defense went up by 1 for the battle!");
-							tSP -= damage(tDEF, 1, mPOW);
-							tDEF += 1;
+							tSp -= damage(tDef, 1, mPow);
+							tDef += 1;
 						}else{
 							JOptionPane.showMessageDialog(null, "You don't have enough SP!");
-							Skip = true;
+							skip = true;
 						}
 					}else if (choice.equals ("c") && cure) {
-						if (tSP > 2){
-							if(healHP(10 + mPOW * 3) || yPT > 0){
-								tSP -= 3;
-								if(yPT > 0){
-									yPT = 0;
+						if (tSp > 2){
+							if(healHP(10 + mPow * 3) || yPt > 0){
+								tSp -= 3;
+								if(yPt > 0){
+									yPt = 0;
 									JOptionPane.showMessageDialog(null, "You are no longer poisoned!");
 								}
 							}
 						}else{
 							JOptionPane.showMessageDialog(null, "You don't have enough SP!");
-							Skip = true;
+							skip = true;
 						}
 					}else if (choice.equals ("f") && flare) {
-						if(tSP > 0){
-							JOptionPane.showMessageDialog(null, "The " + eNAME + " was burned for " + (5 + mPOW) + " turns!");
-							BT += 5 + mPOW;
-							tSP--;
+						if(tSp > 0){
+							JOptionPane.showMessageDialog(null, "The " + eNAME + " was burned for " + (5 + mPow) + " turns!");
+							bt += 5 + mPow;
+							tSp--;
 						}else{
 							JOptionPane.showMessageDialog(null, "You don't have enough SP!");
-							Skip = true;
+							skip = true;
 						}
 					}else if (choice.equals ("vt") && vineTrap) {
-						if(tSP > 2){
-							ST += 3;
-							JOptionPane.showMessageDialog(null, "The " + eNAME + " cannot move for " + ST + " turn(s)!");
-							if ((Math.random()) * 100 < 50 + mPOW * 10){
-								eDEF--;
+						if(tSp > 2){
+							st += 3;
+							JOptionPane.showMessageDialog(null, "The " + eNAME + " cannot move for " + st + " turn(s)!");
+							if ((Math.random()) * 100 < 50 + mPow * 10){
+								eDef--;
 								JOptionPane.showMessageDialog(null, "The " + eNAME + "'s defense went down by one for the battle!");
 							}
-							tSP -= 3;
+							tSp -= 3;
 						}else{
 							JOptionPane.showMessageDialog(null, "You don't have enough SP!");
-							Skip = true;
+							skip = true;
 						}
 					}else if (choice.equals ("h1") && LHPp > 0) {
 						if (healHP(5)) {
@@ -634,265 +634,265 @@ public class Game{
 							GMPp--;
 						}
 					}else{
-						Skip = true;
+						skip = true;
 					}
-					if (eHP <= 0){
+					if (eHp <= 0){
 						XP(eNAME);
 						break;
 					}
 				}
 			}
-			eSPD = 0;
-			if(!Skip){
-				if (yST > 0){
-					yST--;
-					if (yST > 0) {
+			eSpd = 0;
+			if(!skip){
+				if (ySt > 0){
+					ySt--;
+					if (ySt > 0) {
 						JOptionPane.showMessageDialog(null, "You still can't move...");
 					}else{
 						JOptionPane.showMessageDialog(null, "You can move again!");
 					}
 				}
-				if (yPT > 0){
-					yPT--;
+				if (yPt > 0){
+					yPt--;
 					JOptionPane.showMessageDialog(null, "You took 1 poison damage!");
-					tHP--;
-					if (yPT > 0) {
+					tHp--;
+					if (yPt > 0) {
 						JOptionPane.showMessageDialog(null, "You are still poisoned...");
 					}else{
 						JOptionPane.showMessageDialog(null, "You are no longer poisoned!");
 					}
 				}
 			}
-			if (tHP <= 0){
+			if (tHp <= 0){
 				JOptionPane.showMessageDialog(null, "You lost...");
 				System.exit(0);
 			}
-			if (!Skip) {
-				if (ST == 0){
+			if (!skip) {
+				if (st == 0){
 					switch (eNAME){
 					case "green slime":
-						POW = 1;
-						JOptionPane.showMessageDialog(null, "The green slime ran into you for " + damage(POW, 0, tDEF) + " damage!");
-						tHP -= damage(POW, 0, tDEF);
+						pow = 1;
+						JOptionPane.showMessageDialog(null, "The green slime ran into you for " + damage(pow, 0, tDef) + " damage!");
+						tHp -= damage(pow, 0, tDef);
 						break;
 					case "yellow slime":
-						POW = 2;
-						JOptionPane.showMessageDialog(null, "The yellow slime ran into you for " + damage(POW, 0, tDEF) + " damage!");
-						tHP -= damage(POW, 0, tDEF);
+						pow = 2;
+						JOptionPane.showMessageDialog(null, "The yellow slime ran into you for " + damage(pow, 0, tDef) + " damage!");
+						tHp -= damage(pow, 0, tDef);
 						break;
 					case "red slime":
-						POW = 5;
-						JOptionPane.showMessageDialog(null, "The red slime ran into you for " + damage(POW, 0, tDEF) + " damage!");
-						tHP -= damage(POW, 0, tDEF);
+						pow = 5;
+						JOptionPane.showMessageDialog(null, "The red slime ran into you for " + damage(pow, 0, tDef) + " damage!");
+						tHp -= damage(pow, 0, tDef);
 						break;
 					case "goblin":
-						POW = 1;
-						JOptionPane.showMessageDialog(null, "The goblin smacked you for " + damage(POW, 0, tDEF) + " damage!");
-						tHP -= damage(POW, 0, tDEF);
+						pow = 1;
+						JOptionPane.showMessageDialog(null, "The goblin smacked you for " + damage(pow, 0, tDef) + " damage!");
+						tHp -= damage(pow, 0, tDef);
 						break;
 					case "elite goblin":
-						POW = 2;
-						JOptionPane.showMessageDialog(null, "The elite goblin smacked you for " + damage(POW, 0, tDEF) + " damage!");
-						tHP -= damage(POW, 0, tDEF);
+						pow = 2;
+						JOptionPane.showMessageDialog(null, "The elite goblin smacked you for " + damage(pow, 0, tDef) + " damage!");
+						tHp -= damage(pow, 0, tDef);
 						break;
 					case "goblin warlord":
-						POW = 5;
-						JOptionPane.showMessageDialog(null, "The goblin warlord smacked you for " + damage(POW, 0, tDEF) + " damage!");
-						tHP -= damage(POW, 0, tDEF);
+						pow = 5;
+						JOptionPane.showMessageDialog(null, "The goblin warlord smacked you for " + damage(pow, 0, tDef) + " damage!");
+						tHp -= damage(pow, 0, tDef);
 						break;
 					case "squid":
-						if (damage(3, tATK, eDEF) > eHP && !(damage(3, 0, DEF) > HP) && tDEF < 1) {
-							POW = 1;
-							JOptionPane.showMessageDialog(null, "The squid shot ink at you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+						if (damage(3, tAtk, eDef) > eHp && !(damage(3, 0, def) > hp) && tDef < 1) {
+							pow = 1;
+							JOptionPane.showMessageDialog(null, "The squid shot ink at you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 							if ((Math.random()) * 10 < 3){
-								yST++;
-								JOptionPane.showMessageDialog(null, "You cannot move for " + yST + " turn(s)!");
+								ySt++;
+								JOptionPane.showMessageDialog(null, "You cannot move for " + ySt + " turn(s)!");
 							}
 						}else{
-							POW = 2;
-							JOptionPane.showMessageDialog(null, "The squid slapped you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+							pow = 2;
+							JOptionPane.showMessageDialog(null, "The squid slapped you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 						}
 						break;
 					case "octopus":
-						if (damage(3, tATK, eDEF) > eHP && !(damage(5, 0, DEF) > HP) && tDEF < 2) {
-							POW = 2;
-							JOptionPane.showMessageDialog(null, "The octopus shot ink at you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+						if (damage(3, tAtk, eDef) > eHp && !(damage(5, 0, def) > hp) && tDef < 2) {
+							pow = 2;
+							JOptionPane.showMessageDialog(null, "The octopus shot ink at you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 							if ((Math.random()) * 10 <= 3){
-								yST++;
-								JOptionPane.showMessageDialog(null, "You cannot move for " + yST + " turn(s)!");
+								ySt++;
+								JOptionPane.showMessageDialog(null, "You cannot move for " + ySt + " turn(s)!");
 							}
 						}else{
-							POW = 4;
-							JOptionPane.showMessageDialog(null, "The octopus slapped you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+							pow = 4;
+							JOptionPane.showMessageDialog(null, "The octopus slapped you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 						}
 						break;
 					case "kraken":
-						if (damage(3, tATK, eDEF) > eHP && !(damage(11, 0, DEF) > HP) && tDEF < 5) {
-							POW = 5;
-							JOptionPane.showMessageDialog(null, "The kraken shot ink at you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+						if (damage(3, tAtk, eDef) > eHp && !(damage(11, 0, def) > hp) && tDef < 5) {
+							pow = 5;
+							JOptionPane.showMessageDialog(null, "The kraken shot ink at you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 							if ((Math.random()) * 10 <= 3){
-								yST++;
-								JOptionPane.showMessageDialog(null, "You cannot move for " + yST + " turn(s)!");
+								ySt++;
+								JOptionPane.showMessageDialog(null, "You cannot move for " + ySt + " turn(s)!");
 							}
 						}else{
-							POW = 10;
-							JOptionPane.showMessageDialog(null, "The kraken slapped you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+							pow = 10;
+							JOptionPane.showMessageDialog(null, "The kraken slapped you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 						}
 						break;
 					case "spider":
-						if (damage(3, tATK, eDEF) > eHP && !(damage(3, 0, DEF) > HP) && tDEF < 1) {
-							POW = 1;
-							JOptionPane.showMessageDialog(null, "The spider shot a web at you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+						if (damage(3, tAtk, eDef) > eHp && !(damage(3, 0, def) > hp) && tDef < 1) {
+							pow = 1;
+							JOptionPane.showMessageDialog(null, "The spider shot a web at you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 							if ((Math.random()) * 10 < 4){
-								yST++;
-								JOptionPane.showMessageDialog(null, "You cannot move for " + yST + " turn(s)!");
+								ySt++;
+								JOptionPane.showMessageDialog(null, "You cannot move for " + ySt + " turn(s)!");
 							}
 						}else{
-							POW = 2;
-							JOptionPane.showMessageDialog(null, "The spider bit you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+							pow = 2;
+							JOptionPane.showMessageDialog(null, "The spider bit you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 						}
 						break;
 					case "wolf spider":
-						if (damage(3, tATK, eDEF) > eHP && !(damage(5, 0, DEF) > HP) && tDEF < 2) {
-							POW = 2;
-							JOptionPane.showMessageDialog(null, "The wolf spider shot a web at you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+						if (damage(3, tAtk, eDef) > eHp && !(damage(5, 0, def) > hp) && tDef < 2) {
+							pow = 2;
+							JOptionPane.showMessageDialog(null, "The wolf spider shot a web at you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 							if ((Math.random()) * 10 < 4){
-								yST++;
-								JOptionPane.showMessageDialog(null, "You cannot move for " + yST + " turn(s)!");
+								ySt++;
+								JOptionPane.showMessageDialog(null, "You cannot move for " + ySt + " turn(s)!");
 							}
 						}else{
-							POW = 4;
-							JOptionPane.showMessageDialog(null, "The wolf spider bit you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+							pow = 4;
+							JOptionPane.showMessageDialog(null, "The wolf spider bit you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 						}
 						break;
 					case "tarantula":
-						if (damage(3, tATK, eDEF) > eHP && !(damage(11, 0, DEF) > HP) && tDEF < 5) {
-							POW = 5;
-							JOptionPane.showMessageDialog(null, "The tarantula shot a web at you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+						if (damage(3, tAtk, eDef) > eHp && !(damage(11, 0, def) > hp) && tDef < 5) {
+							pow = 5;
+							JOptionPane.showMessageDialog(null, "The tarantula shot a web at you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 							if ((Math.random()) * 10 < 4){
-								yST++;
-								JOptionPane.showMessageDialog(null, "You cannot move for " + yST + " turn(s)!");
+								ySt++;
+								JOptionPane.showMessageDialog(null, "You cannot move for " + ySt + " turn(s)!");
 							}
 						}else{
-							POW = 10;
-							JOptionPane.showMessageDialog(null, "The tarantula bit you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+							pow = 10;
+							JOptionPane.showMessageDialog(null, "The tarantula bit you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 						}
 						break;
 					case "snake":
-						if (damage(3, tATK, eDEF) > eHP || damage(3, 0, DEF) > HP) {
-							POW = 2;
-							JOptionPane.showMessageDialog(null, "The snake bit you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+						if (damage(3, tAtk, eDef) > eHp || damage(3, 0, def) > hp) {
+							pow = 2;
+							JOptionPane.showMessageDialog(null, "The snake bit you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 						}else{
-							POW = 1;
-							JOptionPane.showMessageDialog(null, "The snake spat venom at you for " + damage(POW, 0, tDEF) + " damage! You were also poisoned for 2 turns.");
-							yPT += 2;
-							tHP -= damage(POW, 0, tDEF);
+							pow = 1;
+							JOptionPane.showMessageDialog(null, "The snake spat venom at you for " + damage(pow, 0, tDef) + " damage! You were also poisoned for 2 turns.");
+							yPt += 2;
+							tHp -= damage(pow, 0, tDef);
 						}
 						break;
 					case "cobra":
-						if (damage(3, tATK, eDEF) > eHP || damage(5, 0, DEF) > HP) {
-							POW = 4;
-							JOptionPane.showMessageDialog(null, "The cobra bit you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+						if (damage(3, tAtk, eDef) > eHp || damage(5, 0, def) > hp) {
+							pow = 4;
+							JOptionPane.showMessageDialog(null, "The cobra bit you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 						}else{
-							POW = 2;
-							JOptionPane.showMessageDialog(null, "The cobra spat venom at you for " + damage(POW, 0, tDEF) + " damage! You were also poisoned for 2 turns.");
-							yPT += 4;
-							tHP -= damage(POW, 0, tDEF);
+							pow = 2;
+							JOptionPane.showMessageDialog(null, "The cobra spat venom at you for " + damage(pow, 0, tDef) + " damage! You were also poisoned for 2 turns.");
+							yPt += 4;
+							tHp -= damage(pow, 0, tDef);
 						}
 						break;
 					case "python":
-						if (damage(3, tATK, eDEF) > eHP || damage(11, 0, DEF) > HP) {
-							POW = 10;
-							JOptionPane.showMessageDialog(null, "The python bit you for " + damage(POW, 0, tDEF) + " damage!");
-							tHP -= damage(POW, 0, tDEF);
+						if (damage(3, tAtk, eDef) > eHp || damage(11, 0, def) > hp) {
+							pow = 10;
+							JOptionPane.showMessageDialog(null, "The python bit you for " + damage(pow, 0, tDef) + " damage!");
+							tHp -= damage(pow, 0, tDef);
 						}else{
-							POW = 5;
-							JOptionPane.showMessageDialog(null, "The python spat venom at you for " + damage(POW, 0, tDEF) + " damage! You were also poisoned for 2 turns.");
-							yPT += 4;
-							tHP -= damage(POW, 0, tDEF);
+							pow = 5;
+							JOptionPane.showMessageDialog(null, "The python spat venom at you for " + damage(pow, 0, tDef) + " damage! You were also poisoned for 2 turns.");
+							yPt += 4;
+							tHp -= damage(pow, 0, tDef);
 						}
 						break;
 					case "ogre":
-						POW = 3;
-						JOptionPane.showMessageDialog(null, "The ogre hits you with its club for " + damage(POW, 0, tDEF) + " damage!");
-						tHP -= damage(POW, 0, tDEF);
+						pow = 3;
+						JOptionPane.showMessageDialog(null, "The ogre hits you with its club for " + damage(pow, 0, tDef) + " damage!");
+						tHp -= damage(pow, 0, tDef);
 						break;
 					case "elite ogre":
-						POW = 6;
-						JOptionPane.showMessageDialog(null, "The elite ogre hits you with its club for " + damage(POW, 0, tDEF) + " damage!");
-						tHP -= damage(POW, 0, tDEF);
+						pow = 6;
+						JOptionPane.showMessageDialog(null, "The elite ogre hits you with its club for " + damage(pow, 0, tDef) + " damage!");
+						tHp -= damage(pow, 0, tDef);
 						break;
 					case "ogre warlord":
-						POW = 15;
-						JOptionPane.showMessageDialog(null, "The ogre warlord hits you with its club for " + damage(POW, 0, tDEF) + " damage!");
-						tHP -= damage(POW, 0, tDEF);
+						pow = 15;
+						JOptionPane.showMessageDialog(null, "The ogre warlord hits you with its club for " + damage(pow, 0, tDef) + " damage!");
+						tHp -= damage(pow, 0, tDef);
 						break;
 					}
-					if (tHP <= 0){
+					if (tHp <= 0){
 						JOptionPane.showMessageDialog(null, "You lost...");
 						System.exit(0);
 					}
 				}else{
-					if (ST > 1) {
+					if (st > 1) {
 						JOptionPane.showMessageDialog(null, "The " + eNAME + " still can't move...");
 					}else{
 						JOptionPane.showMessageDialog(null, "The " + eNAME + " can move again!");
 					}
-					ST--;
+					st--;
 				}
-				if (BT > 0){
-					JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + (mPOW + 1) + " burn damage!");
-					eHP -= mPOW + 1;
-					BT--;
-					if (BT == 0){
+				if (bt > 0){
+					JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + (mPow + 1) + " burn damage!");
+					eHp -= mPow + 1;
+					bt--;
+					if (bt == 0){
 						JOptionPane.showMessageDialog(null, "The " + eNAME + " is no longer burned!");
 					}else{
 						JOptionPane.showMessageDialog(null, "The " + eNAME + " is still burned!");
 					}
 				}
-				if (eHP <= 0){
+				if (eHp <= 0){
 					XP(eNAME);
 					break;
 				}
 			}
-			Skip = false;
+			skip = false;
 		}
-		yPT = 0;
-		yST = 0;
-		ST = 0;
-		BT = 0;
+		yPt = 0;
+		ySt = 0;
+		st = 0;
+		bt = 0;
 		b--;
 	}
 
 	private void shop(int s) throws FileNotFoundException{
 		String c;
-		tHP = HP;
-		tSP = SP;
+		tHp = hp;
+		tSp = sp;
 		while(true){
-			output = "You have " + G + " gold.\nWhat would you like to buy?\n";
+			output = "You have " + g + " gold.\nWhat would you like to buy?\n";
 			switch(s){
 			case 1:
 				output += "p1. Lesser health potion (5)\np2. Lesser special potion (5)\n1. Exit";
 				c = JOptionPane.showInputDialog(null, output);
-				if(c.equals("p1") && G > 4){
-					G -= 5;
+				if(c.equals("p1") && g > 4){
+					g -= 5;
 					LHPp++;
-				}else if(c.equals("p2") && G > 4){
-					G -= 5;
+				}else if(c.equals("p2") && g > 4){
+					g -= 5;
 					LSPp++;
 				}else if(c.equals("1")){
 					output = "";
@@ -906,26 +906,26 @@ public class Game{
 				output += "p1. Lesser health potion (5)\np2. Lesser special potion (5)\np3. Health potion (15)\np4. Special potion (15)\np5. Lesser magic potion (15)";
 				output += "\n1. Bronze gauntlets (15)\n2. Bronze helm (15)\n3. Exit";
 				c = JOptionPane.showInputDialog(null, output);
-				if(c.equals("p1") && G > 4){
-					G -= 5;
+				if(c.equals("p1") && g > 4){
+					g -= 5;
 					LHPp++;
-				}else if(c.equals("p2") && G > 4){
-					G -= 5;
+				}else if(c.equals("p2") && g > 4){
+					g -= 5;
 					LSPp++;
-				}else if(c.equals("p3") && G > 14){
-					G -= 15;
+				}else if(c.equals("p3") && g > 14){
+					g -= 15;
 					HPp++;
-				}else if(c.equals("p4") && G > 14){
-					G -= 15;
+				}else if(c.equals("p4") && g > 14){
+					g -= 15;
 					SPp++;
-				}else if(c.equals("p5") && G > 14){
-					G -= 15;
+				}else if(c.equals("p5") && g > 14){
+					g -= 15;
 					LMPp++;
-				}else if(c.equals("1") && G > 14){
-					G -= 15;
+				}else if(c.equals("1") && g > 14){
+					g -= 15;
 					gloves.add("Bronze gauntlets");
-				}else if(c.equals("2") && G > 14){
-					G -= 15;
+				}else if(c.equals("2") && g > 14){
+					g -= 15;
 					helm.add("Bronze helm");
 				}else if(c.equals("3")){
 					output = "";
@@ -939,35 +939,35 @@ public class Game{
 				output += "p1. Lesser health potion (5)\np2. Lesser special potion (5)\np3. Health potion (15)\np4. Special potion (15)\np5. Lesser magic potion (15)";
 				output += "\n1. Bronze gauntlets (15)\n2. Bronze helm (15)\n3. Bronze boots (30)\n4. Silver gauntlets (30)\n5. Silver helm (30)\n6. Exit";
 				c = JOptionPane.showInputDialog(null, output);
-				if(c.equals("p1") && G > 4){
-					G -= 5;
+				if(c.equals("p1") && g > 4){
+					g -= 5;
 					LHPp++;
-				}else if(c.equals("p2") && G > 4){
-					G -= 5;
+				}else if(c.equals("p2") && g > 4){
+					g -= 5;
 					LSPp++;
-				}else if(c.equals("p3") && G > 14){
-					G -= 15;
+				}else if(c.equals("p3") && g > 14){
+					g -= 15;
 					HPp++;
-				}else if(c.equals("p4") && G > 14){
-					G -= 15;
+				}else if(c.equals("p4") && g > 14){
+					g -= 15;
 					SPp++;
-				}else if(c.equals("p5") && G > 14){
-					G -= 15;
+				}else if(c.equals("p5") && g > 14){
+					g -= 15;
 					LMPp++;
-				}else if(c.equals("1") && G > 14){
-					G -= 15;
+				}else if(c.equals("1") && g > 14){
+					g -= 15;
 					gloves.add("Bronze gauntlets");
-				}else if(c.equals("2") && G > 14){
-					G -= 15;
+				}else if(c.equals("2") && g > 14){
+					g -= 15;
 					helm.add("Bronze helm");
-				}else if(c.equals("3") && G > 29){
-					G -= 30;
+				}else if(c.equals("3") && g > 29){
+					g -= 30;
 					boots.add("Bronze boots");
-				}else if(c.equals("4") && G > 29){
-					G -= 30;
+				}else if(c.equals("4") && g > 29){
+					g -= 30;
 					gloves.add("Silver gauntlets");
-				}else if(c.equals("5") && G > 29){
-					G -= 30;
+				}else if(c.equals("5") && g > 29){
+					g -= 30;
 					helm.add("Silver helm");
 				}else if(c.equals("6")){
 					output = "";
@@ -981,53 +981,53 @@ public class Game{
 				output += "p1. Lesser health potion (5)\np2. Lesser special potion (5)\np3. Health potion (15)\np4. Special potion (15)\np5. Lesser magic potion (15)\np6. Greater health potion (45)\np7. Greater special potion (45)\np8. Greater magic potion (45)";
 				output += "\n1. Bronze gauntlets (15)\n2. Bronze helm (15)\n3. Bronze boots (30)\n4. Silver gauntlets (30)\n5. Silver helm (30)\n6. Bronze armor (45)\n7. Gold gauntlets (45)\n8. Gold helm (45)\n9. Exit";
 				c = JOptionPane.showInputDialog(null, output);
-				if(c.equals("p1") && G > 4){
-					G -= 5;
+				if(c.equals("p1") && g > 4){
+					g -= 5;
 					LHPp++;
-				}else if(c.equals("p2") && G > 4){
-					G -= 5;
+				}else if(c.equals("p2") && g > 4){
+					g -= 5;
 					LSPp++;
-				}else if(c.equals("p3") && G > 14){
-					G -= 15;
+				}else if(c.equals("p3") && g > 14){
+					g -= 15;
 					HPp++;
-				}else if(c.equals("p4") && G > 14){
-					G -= 15;
+				}else if(c.equals("p4") && g > 14){
+					g -= 15;
 					SPp++;
-				}else if(c.equals("p5") && G > 14){
-					G -= 15;
+				}else if(c.equals("p5") && g > 14){
+					g -= 15;
 					LMPp++;
-				}else if(c.equals("p6") && G > 44){
-					G -= 45;
+				}else if(c.equals("p6") && g > 44){
+					g -= 45;
 					GHPp++;
-				}else if(c.equals("p7") && G > 44){
-					G -= 45;
+				}else if(c.equals("p7") && g > 44){
+					g -= 45;
 					GSPp++;
-				}else if(c.equals("p8") && G > 44){
-					G -= 45;
+				}else if(c.equals("p8") && g > 44){
+					g -= 45;
 					GMPp++;
-				}else if(c.equals("1") && G > 14){
-					G -= 15;
+				}else if(c.equals("1") && g > 14){
+					g -= 15;
 					gloves.add("Bronze gauntlets");
-				}else if(c.equals("2") && G > 14){
-					G -= 15;
+				}else if(c.equals("2") && g > 14){
+					g -= 15;
 					helm.add("Bronze helm");
-				}else if(c.equals("3") && G > 29){
-					G -= 30;
+				}else if(c.equals("3") && g > 29){
+					g -= 30;
 					boots.add("Bronze boots");
-				}else if(c.equals("4") && G > 29){
-					G -= 30;
+				}else if(c.equals("4") && g > 29){
+					g -= 30;
 					gloves.add("Silver gauntlets");
-				}else if(c.equals("5") && G > 29){
-					G -= 30;
+				}else if(c.equals("5") && g > 29){
+					g -= 30;
 					helm.add("Silver helm");
-				}else if(c.equals("6") && G > 44){
-					G -= 45;
+				}else if(c.equals("6") && g > 44){
+					g -= 45;
 					armor.add("Bronze armor");
-				}else if(c.equals("7") && G > 44){
-					G -= 45;
+				}else if(c.equals("7") && g > 44){
+					g -= 45;
 					gloves.add("Gold gauntlets");
-				}else if(c.equals("8") && G > 44){
-					G -= 45;
+				}else if(c.equals("8") && g > 44){
+					g -= 45;
 					helm.add("Gold helm");
 				}else if(c.equals("9")){
 					output = "";
@@ -1041,62 +1041,62 @@ public class Game{
 				output += "p1. Lesser health potion (5)\np2. Lesser special potion (5)\np3. Health potion (15)\np4. Special potion (15)\np5. Lesser magic potion (15)\np6. Greater health potion (45)\np7. Greater special potion (45)\np8. Greater magic potion (45)";
 				output += "\n1. Bronze gauntlets (15)\n2. Bronze helm (15)\n3. Bronze boots (30)\n4. Silver gauntlets (30)\n5. Silver helm (30)\n6. Bronze armor (45)\n7. Gold gauntlets (45)\n8. Gold helm (45)\n9. Silver boots (60)\n10. Platinum gauntlets (60)\n11. Platinum helm (60)\n12. Exit";
 				c = JOptionPane.showInputDialog(null, output);
-				if(c.equals("p1") && G > 4){
-					G -= 5;
+				if(c.equals("p1") && g > 4){
+					g -= 5;
 					LHPp++;
-				}else if(c.equals("p2") && G > 4){
-					G -= 5;
+				}else if(c.equals("p2") && g > 4){
+					g -= 5;
 					LSPp++;
-				}else if(c.equals("p3") && G > 14){
-					G -= 15;
+				}else if(c.equals("p3") && g > 14){
+					g -= 15;
 					HPp++;
-				}else if(c.equals("p4") && G > 14){
-					G -= 15;
+				}else if(c.equals("p4") && g > 14){
+					g -= 15;
 					SPp++;
-				}else if(c.equals("p5") && G > 14){
-					G -= 15;
+				}else if(c.equals("p5") && g > 14){
+					g -= 15;
 					LMPp++;
-				}else if(c.equals("p6") && G > 44){
-					G -= 45;
+				}else if(c.equals("p6") && g > 44){
+					g -= 45;
 					GHPp++;
-				}else if(c.equals("p7") && G > 44){
-					G -= 45;
+				}else if(c.equals("p7") && g > 44){
+					g -= 45;
 					GSPp++;
-				}else if(c.equals("p8") && G > 44){
-					G -= 45;
+				}else if(c.equals("p8") && g > 44){
+					g -= 45;
 					GMPp++;
-				}else if(c.equals("1") && G > 14){
-					G -= 15;
+				}else if(c.equals("1") && g > 14){
+					g -= 15;
 					gloves.add("Bronze gauntlets");
-				}else if(c.equals("2") && G > 14){
-					G -= 15;
+				}else if(c.equals("2") && g > 14){
+					g -= 15;
 					helm.add("Bronze helm");
-				}else if(c.equals("3") && G > 29){
-					G -= 30;
+				}else if(c.equals("3") && g > 29){
+					g -= 30;
 					boots.add("Bronze boots");
-				}else if(c.equals("4") && G > 29){
-					G -= 30;
+				}else if(c.equals("4") && g > 29){
+					g -= 30;
 					gloves.add("Silver gauntlets");
-				}else if(c.equals("5") && G > 29){
-					G -= 30;
+				}else if(c.equals("5") && g > 29){
+					g -= 30;
 					helm.add("Silver helm");
-				}else if(c.equals("6") && G > 44){
-					G -= 45;
+				}else if(c.equals("6") && g > 44){
+					g -= 45;
 					armor.add("Bronze armor");
-				}else if(c.equals("7") && G > 44){
-					G -= 45;
+				}else if(c.equals("7") && g > 44){
+					g -= 45;
 					gloves.add("Gold gauntlets");
-				}else if(c.equals("8") && G > 44){
-					G -= 45;
+				}else if(c.equals("8") && g > 44){
+					g -= 45;
 					helm.add("Gold helm");
-				}else if(c.equals("9") && G > 59){
-					G -= 60;
+				}else if(c.equals("9") && g > 59){
+					g -= 60;
 					boots.add("Silver boots");
-				}else if(c.equals("10") && G > 59){
-					G -= 60;
+				}else if(c.equals("10") && g > 59){
+					g -= 60;
 					gloves.add("Platinum gauntlets");
-				}else if(c.equals("11") && G > 59){
-					G -= 60;
+				}else if(c.equals("11") && g > 59){
+					g -= 60;
 					helm.add("Platinum helm");
 				}else if(c.equals("12")){
 					output = "";
@@ -1115,7 +1115,7 @@ public class Game{
 	}
 
 	private boolean heal(int x){
-		if(tHP < HP || tSP < SP){
+		if(tHp < hp || tSp < sp){
 			restoreHP(x * 5);
 			restoreSP(x);
 			return true;
@@ -1124,45 +1124,45 @@ public class Game{
 	}
 
 	private boolean healHP(int x){
-		if (tHP < HP){
+		if (tHp < hp){
 			restoreHP(x);
 			return true;
 		}else{
 			JOptionPane.showMessageDialog(null, "You are at full health!");
-			Skip = true;
+			skip = true;
 			return false;
 		}
 	}
 
 	private void restoreHP(int x){
-		tHP += x;
-		while(tHP > HP){
-			tHP--;
+		tHp += x;
+		while(tHp > hp){
+			tHp--;
 			x--;
 		}
 		JOptionPane.showMessageDialog(null, "You recovered " + x + " HP.");
 	}
 
 	private boolean healSP(int x){
-		if (tSP < SP){
-			tSP += x;
-			while(tSP > SP){
-				tSP--;
+		if (tSp < sp){
+			tSp += x;
+			while(tSp > sp){
+				tSp--;
 				x--;
 			}
 			JOptionPane.showMessageDialog(null, "You recovered " + x + " SP.");
 			return true;
 		}else{
 			JOptionPane.showMessageDialog(null, "You are at full SP!");
-			Skip = true;
+			skip = true;
 			return false;
 		}
 	}
 
 	private void restoreSP(int x){
-		tSP += x;
-		while(tSP > SP){
-			tSP--;
+		tSp += x;
+		while(tSp > sp){
+			tSp--;
 			x--;
 		}
 		JOptionPane.showMessageDialog(null, "You recovered " + x + " SP.");
@@ -1235,38 +1235,38 @@ public class Game{
 			}
 		}
 		if (crown){
-			G += eG + eXP;
-			JOptionPane.showMessageDialog(null, "You beat the " + eNAME + ". You got " + (eG + eXP) + " gold!");
+			g += eG + eXp;
+			JOptionPane.showMessageDialog(null, "You beat the " + eNAME + ". You got " + (eG + eXp) + " gold!");
 		}else{
-			G += eG;
-			XP += eXP;
-			JOptionPane.showMessageDialog(null, "You beat the " + eNAME + ". You got " + eXP + " XP and " + eG + " gold!");
+			g += eG;
+			xp += eXp;
+			JOptionPane.showMessageDialog(null, "You beat the " + eNAME + ". You got " + eXp + " XP and " + eG + " gold!");
 		}
-		while (XP >= XPG) {
-			LVUP++;
-			XPG += XPI;
-			XPI += XPI;
+		while (xp >= xpg) {
+			lvup++;
+			xpg += xpi;
+			xpi += xpi;
 		}
-		XPR = XPG - XP;
-		while (LVUP > 0){
-			HP += 5;
-			tHP += 5;
-			SP++;
-			tSP++;
-			SPD++;
+		xpr = xpg - xp;
+		while (lvup > 0){
+			hp += 5;
+			tHp += 5;
+			sp++;
+			tSp++;
+			spd++;
 			gems = true;
 			while(gems){
 				String menu = JOptionPane.showInputDialog("You leveled up! Your HP went up by 5! Your SP went up by 1! Your SPD went up 1! Would you like to upgrade attack(a) or defense(d)?");
 				if (menu.equals ("a")){
-					ATK++;
+					atk++;
 					gems = false;
 				}else if (menu.equals ("d")){
-					DEF++;
+					def++;
 					gems = false;
 				}
 			}
-			LVUP--;
-			LV++;
+			lvup--;
+			lv++;
 		}
 	}
 	private void gemShop(int s) throws FileNotFoundException{
@@ -1333,7 +1333,7 @@ public class Game{
 		String c = JOptionPane.showInputDialog("Would you like to use the menu (m) or continue (Any other key)?");
 		if (c.equals("m")){
 			while(true){
-				JOptionPane.showMessageDialog(null, "You are Level " + LV + ".  You have " + tHP + "/" + HP + " HP and " + tSP + "/" + SP + " SP.  Your ATK is " + ATK + ", your DEF is " + DEF + " (" + (DEF + AC) + " with armor), and your SPD is " + SPD + ".  You need " + XPR + " XP to level up.  You have " + G + " gold. You need to beat "+ b + " more monster(s) to get to the next town.");
+				JOptionPane.showMessageDialog(null, "You are Level " + lv + ".  You have " + tHp + "/" + hp + " HP and " + tSp + "/" + sp + " SP.  Your ATK is " + atk + ", your DEF is " + def + " (" + (def + ac) + " with armor), and your SPD is " + spd + ".  You need " + xpr + " XP to level up.  You have " + g + " gold. You need to beat "+ b + " more monster(s) to get to the next town.");
 				c = JOptionPane.showInputDialog("Helm: " + Ehelm + " | Gloves: " + Egloves + " | Boots: " + Eboots + " | Armor: " + Earmor + " \nWould you like to equip a (h)elm, (g)loves, (b)oots, (a)rmor, use a (p)otion or healing ability, or do (n)othing?");
 				if (c.equals("h")){
 					crown = false;
@@ -1347,30 +1347,30 @@ public class Game{
 						String N = helm.get(n - 1);
 						switch(N){
 						case "Nothing":
-							mPOW = 0;
+							mPow = 0;
 							break;
 						case "Bronze helm":
-							mPOW = 1;
+							mPow = 1;
 							break;
 						case "Silver helm":
-							mPOW = 2;
+							mPow = 2;
 							break;
 						case "Gold helm":
-							mPOW = 3;
+							mPow = 3;
 							break;
 						case "Platinum helm":
-							mPOW = 4;
+							mPow = 4;
 							break;
 						case "Bronze crown":
-							mPOW = 1;
+							mPow = 1;
 							crown = true;
 							break;
 						case "Silver crown":
-							mPOW = 2;
+							mPow = 2;
 							crown = true;
 							break;
 						case "Gold crown":
-							mPOW = 3;
+							mPow = 3;
 							crown = true;
 							break;
 						}
@@ -1387,19 +1387,19 @@ public class Game{
 						String N = gloves.get(n - 1);
 						switch(N){
 						case "Nothing":
-							gPOW = 0;
+							gPow = 0;
 							break;
 						case "Bronze gauntlets":
-							gPOW = 1;
+							gPow = 1;
 							break;
 						case "Silver gauntlets":
-							gPOW = 2;
+							gPow = 2;
 							break;
 						case "Gold gauntlets":
-							gPOW = 3;
+							gPow = 3;
 							break;
 						case "Platinum gauntlets":
-							gPOW = 4;
+							gPow = 4;
 							break;
 						}
 						Egloves = N;
@@ -1415,13 +1415,13 @@ public class Game{
 						String N = boots.get(n - 1);
 						switch(N){
 						case "Nothing":
-							bPOW = 0;
+							bPow = 0;
 							break;
 						case "Bronze boots":
-							bPOW = 1;
+							bPow = 1;
 							break;
 						case "Silver boots":
-							bPOW = 2;
+							bPow = 2;
 							break;
 						}
 						Eboots = N;
@@ -1437,21 +1437,21 @@ public class Game{
 						String N = armor.get(n - 1);
 						switch(N){
 						case "Nothing":
-							AC = 0;
+							ac = 0;
 							break;
 						case "Bronze armor":
-							AC = 1;
+							ac = 1;
 							break;
 						}
 						Earmor = N;
 					}
 				}else if (c.equals("p")){
 					output = "What would you like to use?";
-					if (nutritiousWater && tSP > 0){
-						output += "\nNutritious Water heals " + (5 + mPOW) + " HP and uses 1 SP (nw).";
+					if (nutritiousWater && tSp > 0){
+						output += "\nNutritious Water heals " + (5 + mPow) + " HP and uses 1 SP (nw).";
 					}
-					if (cure && tSP > 2){
-						output += "\nCure heals " + (10 + mPOW * 2) + " HP, cures poison, and uses 3 SP (c).";
+					if (cure && tSp > 2){
+						output += "\nCure heals " + (10 + mPow * 2) + " HP, cures poison, and uses 3 SP (c).";
 					}
 					if(LHPp == 1){
 						output += "\nYou can use your lesser health potion to heal 5 HP (h1).";
@@ -1535,17 +1535,17 @@ public class Game{
 							GMPp--;
 						}
 					}else if (c.equals ("nw") && nutritiousWater){
-						if (tSP > 0){
-							if(healHP(5 + mPOW)){
-								tSP--;
+						if (tSp > 0){
+							if(healHP(5 + mPow)){
+								tSp--;
 							}
 						}
 					}else if (c.equals ("c") && cure) {
-						if (tSP > 2){
-							if(healHP(10 + mPOW * 2) || yPT > 0){
-								tSP -= 3;
-								if(yPT > 0){
-									yPT = 0;
+						if (tSp > 2){
+							if(healHP(10 + mPow * 2) || yPt > 0){
+								tSp -= 3;
+								if(yPt > 0){
+									yPt = 0;
 									JOptionPane.showMessageDialog(null, "You are no longer poisoned!");
 								}
 							}
@@ -1561,27 +1561,27 @@ public class Game{
 	private void save() throws FileNotFoundException{
 		PrintWriter writer = new PrintWriter("C:/Users/Public/Save");
 		writer.print("");
-		writer.println(HP);
-		writer.println(SP);
-		writer.println(DEF);
-		writer.println(AC);
-		writer.println(ATK);
-		writer.println(SPD);
+		writer.println(hp);
+		writer.println(sp);
+		writer.println(def);
+		writer.println(ac);
+		writer.println(atk);
+		writer.println(spd);
 		writer.println(nutritiousWater);
 		writer.println(scorch);
 		writer.println(vineShield);
 		writer.println(cure);
 		writer.println(flare);
 		writer.println(vineTrap);
-		writer.println(XP);
-		writer.println(XPG);
-		writer.println(XPR);
-		writer.println(XPI);
-		writer.println(LV);
-		writer.println(G);
-		writer.println(gPOW);
-		writer.println(bPOW);
-		writer.println(mPOW);
+		writer.println(xp);
+		writer.println(xpg);
+		writer.println(xpr);
+		writer.println(xpi);
+		writer.println(lv);
+		writer.println(g);
+		writer.println(gPow);
+		writer.println(bPow);
+		writer.println(mPow);
 		writer.println(Earmor);
 		writer.println(Egloves);
 		writer.println(Eboots);
@@ -1617,27 +1617,27 @@ public class Game{
 	}
 	private void load() throws FileNotFoundException{
         Scanner s = new Scanner(new File ("C:/Users/Public/Save"));
-        HP = s.nextInt();
-        SP = s.nextInt();
-		DEF = s.nextInt();
-		AC = s.nextInt();
-		ATK = s.nextInt();
-		SPD = s.nextInt();
+        hp = s.nextInt();
+        sp = s.nextInt();
+		def = s.nextInt();
+		ac = s.nextInt();
+		atk = s.nextInt();
+		spd = s.nextInt();
 		nutritiousWater = s.nextBoolean();
 		scorch = s.nextBoolean();
 		vineShield = s.nextBoolean();
 		cure = s.nextBoolean();
 		flare = s.nextBoolean();
 		vineTrap = s.nextBoolean();
-		XP = s.nextInt();
-		XPG = s.nextInt();
-		XPR = s.nextInt();
-		XPI = s.nextInt();
-		LV = s.nextInt();
-		G = s.nextInt();
-		gPOW = s.nextInt();
-		bPOW = s.nextInt();
-		mPOW = s.nextInt();
+		xp = s.nextInt();
+		xpg = s.nextInt();
+		xpr = s.nextInt();
+		xpi = s.nextInt();
+		lv = s.nextInt();
+		g = s.nextInt();
+		gPow = s.nextInt();
+		bPow = s.nextInt();
+		mPow = s.nextInt();
 		s.nextLine();
 		Earmor = s.nextLine();
 		Egloves = s.nextLine();
@@ -1675,7 +1675,7 @@ public class Game{
 		}
 		loc = s.nextInt();
 		s.close();
-		if(HP > 35 || SP > 6 || DEF > 5 || ATK > 5 || ATK + DEF > 5 || AC > 1 || SPD > 6 || G > 500 || gPOW > 3 || bPOW > 1 || mPOW > 3){
+		if(hp > 35 || sp > 6 || def > 5 || atk > 5 || atk + def > 5 || ac > 1 || spd > 6 || g > 500 || gPow > 3 || bPow > 1 || mPow > 3){
 			JOptionPane.showMessageDialog(null, "Your file is corrupt.");
 			System.exit(0);
 		}

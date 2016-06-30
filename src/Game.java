@@ -6,65 +6,125 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Game{
+	/** Player's max HP */
 	private int hp = 10;
+	/** Player's max SP */
 	private int sp = 1;
+	/** Player's unmodified defense */
 	private int def = 0;
+	/** Player's defense from armor */
 	private int ac = 0;
+	/** Player's unmodified attack */
 	private int atk = 0;
+	/** Player's unmodified speed */
 	private int spd = 1;
+	/** Player's current HP */
 	private int tHp = hp;
+	/** Player's current SP */
 	private int tSp = sp;
+	/** Player's current attack */
 	private int tAtk = atk;
+	/** Player's current defense */
 	private int tDef = def;
+	/** If the player knows the spell nutritious water */
 	private boolean nutritiousWater = false;
+	/** If the player knows the spell scorch */
 	private boolean scorch = false;
+	/** If the player knows the spell vine shield */
 	private boolean vineShield = false;
+	/** If the player knows the spell cure */
 	private boolean cure = false;
+	/** If the player knows the spell flare */
 	private boolean flare = false;
+	/** If the player knows the spell vine trap */
 	private boolean vineTrap = false;
+	/** Player's EXP */
 	private int xp;
+	/** How much total EXP the player needs to increase LV */
 	private int xpg = 10;
+	/** How much more EXP the player needs to increase LV */
 	private int xpr = 10;
+	/** How much xpg will increase when the player's LV increases */
 	private int xpi = 20;
+	/** How many times the player's LV will increase */
 	private int lvup;
+	/** Player's LV */
 	private int lv = 1;
-	private int g = 0;
-	private boolean gems = false;
+	/** Player's gold */
+	private int g;
+	/** If the player has an ability gem */
+	private boolean gem = false;
+	/** Power of the current attack */
 	private int pow;
+	/** Player's punching power */
 	private int gPow;
+	/** Player's kicking power */
 	private int bPow;
+	/** Player's magic power */
 	private int mPow;
+	/** Amount of turns enemy is stunned for */
 	private int st;
+	/** Amount of turns player is stunned for */
 	private int ySt;
+	/** Amount of turns enemy is burned for */
 	private int bt;
+	/** Amount of turns player is poisoned for */
 	private int yPt;
+	/** If a round of combat will be skipped */
 	private boolean skip = false;
+	/** Enemy's Current HP */
 	private int eHp;
-	private int eMaxhp = eHp;
+	/** Enemy's max HP */
+	private int eMaxhp;
+	/** Enemy's defense */
 	private int eDef;
+	/** Enemy's speed */
 	private int eSpd;
+	/** EXP earned by defeating enemy */
 	private int eXp;
+	/** Gold earned by defeating enemy */
 	private int eG;
+	/** Current armor */
 	private String Earmor = "Nothing";
+	/** Current gloves */
 	private String Egloves = "Nothing";
+	/** Current boots */
 	private String Eboots = "Nothing";
+	/** Current helm */
 	private String Ehelm = "Nothing";
+	/** Amount of lesser healing potions player owns */
 	private int LHPp;
+	/** Amount of lesser special potions player owns */
 	private int LSPp;
+	/** Amount of healing potions player owns */
 	private int HPp;
+	/** Amount of special potions player owns */
 	private int SPp;
+	/** Amount of lesser magic potions player owns */
 	private int LMPp;
+	/** Amount of greater healing potions player owns */
 	private int GHPp;
+	/** Amount of greater special potions player owns */
 	private int GSPp;
+	/** Amount of greater magic potions player owns */
 	private int GMPp;
+	/** Amount of battles until the player reaches the next town */
 	private int b;
+	/** If player is wearing a crown */
 	private boolean crown = false;
+	/** What helms the player owns */
 	private ArrayList<String> helm = new ArrayList<String>();
+	/** What gloves the player owns */
 	private ArrayList<String> gloves = new ArrayList<String>();
+	/** What armor the player owns */
 	private ArrayList<String> armor = new ArrayList<String>();
+	/** What boots the player owns */
 	private ArrayList<String> boots = new ArrayList<String>();
+	/** Where the player is */
 	private int loc = 1;
+	/** What text should be displayed */
 	private String output = "";
+	/** The game */
 	private static final Game GAME = new Game();
 	
 	public static void main(String args[]){
@@ -74,7 +134,7 @@ public class Game{
 			JOptionPane.showMessageDialog(null, "Error: " + e.getLocalizedMessage());
 		}
 	}
-	
+	/** Starts the game */
 	private void play() throws FileNotFoundException{
 		String choice = JOptionPane.showInputDialog("Would you like to load a saved game? (y/n)");
 		if (choice.equalsIgnoreCase("y")){
@@ -208,6 +268,10 @@ public class Game{
 			JOptionPane.showMessageDialog(null, "You win!");
 		}
 	}
+	/**
+	 * Starts a battle against a random enemy
+	 * @param d - The difficulty of the encounter
+	 * */
 	private void encounter(int d) throws FileNotFoundException{
 		double r = Math.random() * 10;
 		switch (d){
@@ -314,8 +378,12 @@ public class Game{
 			menu();
 		}
 	}
-	private void battle(String eNAME){
-		switch (eNAME){
+	/**
+	 * Causes the player to battle an enemy
+	 * @param eName - The enemy
+	 * */
+	private void battle(String eName){
+		switch (eName){
 		case "green slime":
 			eHp = 5;
 			eDef = 0;
@@ -450,7 +518,7 @@ public class Game{
 		while (true) {
 			if (spd >= eSpd){
 				if (ySt == 0){
-					String choice = JOptionPane.showInputDialog("You have " + tHp + "/" + hp + " HP and " + tSp + "/" + sp + " SP.  The " + eNAME + " has " + eHp + "/" + eMaxhp + " HP and " + eDef + " DEF.  Press l for a list of actions.");
+					String choice = JOptionPane.showInputDialog("You have " + tHp + "/" + hp + " HP and " + tSp + "/" + sp + " SP.  The " + eName + " has " + eHp + "/" + eMaxhp + " HP and " + eDef + " DEF.  Press l for a list of actions.");
 					if (choice.equals("l")){
 						output = "Punch does " + (2 + gPow + atk) + " damage (p).\nKick does " + (1 + bPow + atk) + " damage and stuns the enemy 50% of the time (k).";
 						if (nutritiousWater){
@@ -524,15 +592,15 @@ public class Game{
 						skip = true;
 					}else if (choice.equals("p")){
 						pow = 2 + gPow;
-						JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + damage(pow, tAtk, eDef) + " damage!");
+						JOptionPane.showMessageDialog(null, "The " + eName + " took " + damage(pow, tAtk, eDef) + " damage!");
 						eHp -= damage(pow, tAtk, eDef);
 					}else if (choice.equals("k")) {
 						pow = 1 + bPow;
-						JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + damage(pow, tAtk, eDef) + " damage!");
+						JOptionPane.showMessageDialog(null, "The " + eName + " took " + damage(pow, tAtk, eDef) + " damage!");
 						eHp -= damage(pow, tAtk, eDef);
 						if ((Math.random()) * 10 < 5){
 							st++;
-							JOptionPane.showMessageDialog(null, "The " + eNAME + " cannot move for " + st + " turn(s)!");
+							JOptionPane.showMessageDialog(null, "The " + eName + " cannot move for " + st + " turn(s)!");
 						}
 					}else if (choice.equals ("nw") && nutritiousWater){
 						if (tSp > 0){
@@ -546,11 +614,11 @@ public class Game{
 					}else if (choice.equals ("s") && scorch) {
 						if (tSp > 0){
 							pow = 3 + mPow;
-							JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + damage(pow, tAtk, eDef) + " damage!");
+							JOptionPane.showMessageDialog(null, "The " + eName + " took " + damage(pow, tAtk, eDef) + " damage!");
 							eHp -= damage(pow, tAtk, eDef);
 							if ((Math.random()) * 100 < 50 + mPow * 10){
 								bt += 2;
-								JOptionPane.showMessageDialog(null, "The " + eNAME + " was burned for 2 turns!");
+								JOptionPane.showMessageDialog(null, "The " + eName + " was burned for 2 turns!");
 							}
 							tSp--;
 						}else{
@@ -581,7 +649,7 @@ public class Game{
 						}
 					}else if (choice.equals ("f") && flare) {
 						if(tSp > 0){
-							JOptionPane.showMessageDialog(null, "The " + eNAME + " was burned for " + (5 + mPow) + " turns!");
+							JOptionPane.showMessageDialog(null, "The " + eName + " was burned for " + (5 + mPow) + " turns!");
 							bt += 5 + mPow;
 							tSp--;
 						}else{
@@ -591,10 +659,10 @@ public class Game{
 					}else if (choice.equals ("vt") && vineTrap) {
 						if(tSp > 2){
 							st += 3;
-							JOptionPane.showMessageDialog(null, "The " + eNAME + " cannot move for " + st + " turn(s)!");
+							JOptionPane.showMessageDialog(null, "The " + eName + " cannot move for " + st + " turn(s)!");
 							if ((Math.random()) * 100 < 50 + mPow * 10){
 								eDef--;
-								JOptionPane.showMessageDialog(null, "The " + eNAME + "'s defense went down by one for the battle!");
+								JOptionPane.showMessageDialog(null, "The " + eName + "'s defense went down by one for the battle!");
 							}
 							tSp -= 3;
 						}else{
@@ -637,7 +705,7 @@ public class Game{
 						skip = true;
 					}
 					if (eHp <= 0){
-						XP(eNAME);
+						XP(eName);
 						break;
 					}
 				}
@@ -669,7 +737,7 @@ public class Game{
 			}
 			if (!skip) {
 				if (st == 0){
-					switch (eNAME){
+					switch (eName){
 					case "green slime":
 						pow = 1;
 						JOptionPane.showMessageDialog(null, "The green slime ran into you for " + damage(pow, 0, tDef) + " damage!");
@@ -848,24 +916,24 @@ public class Game{
 					}
 				}else{
 					if (st > 1) {
-						JOptionPane.showMessageDialog(null, "The " + eNAME + " still can't move...");
+						JOptionPane.showMessageDialog(null, "The " + eName + " still can't move...");
 					}else{
-						JOptionPane.showMessageDialog(null, "The " + eNAME + " can move again!");
+						JOptionPane.showMessageDialog(null, "The " + eName + " can move again!");
 					}
 					st--;
 				}
 				if (bt > 0){
-					JOptionPane.showMessageDialog(null, "The " + eNAME + " took " + (mPow + 1) + " burn damage!");
+					JOptionPane.showMessageDialog(null, "The " + eName + " took " + (mPow + 1) + " burn damage!");
 					eHp -= mPow + 1;
 					bt--;
 					if (bt == 0){
-						JOptionPane.showMessageDialog(null, "The " + eNAME + " is no longer burned!");
+						JOptionPane.showMessageDialog(null, "The " + eName + " is no longer burned!");
 					}else{
-						JOptionPane.showMessageDialog(null, "The " + eNAME + " is still burned!");
+						JOptionPane.showMessageDialog(null, "The " + eName + " is still burned!");
 					}
 				}
 				if (eHp <= 0){
-					XP(eNAME);
+					XP(eName);
 					break;
 				}
 			}
@@ -877,7 +945,10 @@ public class Game{
 		bt = 0;
 		b--;
 	}
-
+	/**
+	 * Lets the player buy items at a shop
+	 * @param s - The shop
+	 * */
 	private void shop(int s) throws FileNotFoundException{
 		String c;
 		tHp = hp;
@@ -1113,7 +1184,10 @@ public class Game{
 			menu();
 		}
 	}
-
+	/**
+	 * If the player can be healed, heals the player
+	 * @param x - Power of the healing
+	 * */
 	private boolean heal(int x){
 		if(tHp < hp || tSp < sp){
 			restoreHP(x * 5);
@@ -1122,7 +1196,10 @@ public class Game{
 		}
 		return false;
 	}
-
+	/**
+	 * If the player's HP can be restored, restores the player's HP
+	 * @param x - Power of the healing
+	 * */
 	private boolean healHP(int x){
 		if (tHp < hp){
 			restoreHP(x);
@@ -1133,7 +1210,10 @@ public class Game{
 			return false;
 		}
 	}
-
+	/**
+	 * Increases the player's current HP (Should only be used in heal and healHP)
+	 * @param x - How much to increase HP
+	 * */
 	private void restoreHP(int x){
 		tHp += x;
 		while(tHp > hp){
@@ -1142,7 +1222,10 @@ public class Game{
 		}
 		JOptionPane.showMessageDialog(null, "You recovered " + x + " HP.");
 	}
-
+	/**
+	 * If the player's SP can be restored, restores the player's SP
+	 * @param x - Power of the healing
+	 * */
 	private boolean healSP(int x){
 		if (tSp < sp){
 			tSp += x;
@@ -1158,7 +1241,10 @@ public class Game{
 			return false;
 		}
 	}
-
+	/**
+	 * Increases the player's current SP (Should only be used in heal and healSP)
+	 * @param x - How much to increase SP
+	 * */
 	private void restoreSP(int x){
 		tSp += x;
 		while(tSp > sp){
@@ -1167,7 +1253,12 @@ public class Game{
 		}
 		JOptionPane.showMessageDialog(null, "You recovered " + x + " SP.");
 	}
-
+	/**
+	 * Calculates damage
+	 * @param a1 - Power of the attack
+	 * @param a2 - Attack of the attacker
+	 * @param d - Defense of the defender
+	 * */
 	private int damage(int a1, int a2, int d){
 		int x = a1 + a2;
 		int y = x - d;
@@ -1176,9 +1267,12 @@ public class Game{
 		}
 		return y;
 	}
-
-	private void XP(String eNAME){
-		switch(eNAME){
+	/**
+	 * Gives player rewards for defeating enemies
+	 * @param eName - The defeated enemy
+	 * */
+	private void XP(String eName){
+		switch(eName){
 		case "red slime":
 			if (Math.random() * 10 < 7){
 				if(helm.contains("Bronze crown")){
@@ -1236,11 +1330,11 @@ public class Game{
 		}
 		if (crown){
 			g += eG + eXp;
-			JOptionPane.showMessageDialog(null, "You beat the " + eNAME + ". You got " + (eG + eXp) + " gold!");
+			JOptionPane.showMessageDialog(null, "You beat the " + eName + ". You got " + (eG + eXp) + " gold!");
 		}else{
 			g += eG;
 			xp += eXp;
-			JOptionPane.showMessageDialog(null, "You beat the " + eNAME + ". You got " + eXp + " XP and " + eG + " gold!");
+			JOptionPane.showMessageDialog(null, "You beat the " + eName + ". You got " + eXp + " XP and " + eG + " gold!");
 		}
 		while (xp >= xpg) {
 			lvup++;
@@ -1254,38 +1348,42 @@ public class Game{
 			sp++;
 			tSp++;
 			spd++;
-			gems = true;
-			while(gems){
+			gem = true;
+			while(gem){
 				String menu = JOptionPane.showInputDialog("You leveled up! Your HP went up by 5! Your SP went up by 1! Your SPD went up 1! Would you like to upgrade attack(a) or defense(d)?");
 				if (menu.equals ("a")){
 					atk++;
-					gems = false;
+					gem = false;
 				}else if (menu.equals ("d")){
 					def++;
-					gems = false;
+					gem = false;
 				}
 			}
 			lvup--;
 			lv++;
 		}
 	}
+	/**
+	 * Lets the player choose a spell to learn
+	 * @param s - What spells are available
+	 * */
 	private void gemShop(int s) throws FileNotFoundException{
-		gems = true;
+		gem = true;
 		String c;
-		while(gems){
+		while(gem){
 			output = "What would you like to learn?\n";
 			switch(s){
 			case 1:
 				output += "1. Nutritious Water\n2. Scorch\n3. Vine Shield";
 				c = JOptionPane.showInputDialog(null, output);
 				if(c.equals("1") && !nutritiousWater){
-					gems = false;
+					gem = false;
 					nutritiousWater = true;
 				}else if(c.equals("2") && !scorch){
-					gems = false;
+					gem = false;
 					scorch = true;
 				}else if(c.equals("3") && !vineShield){
-					gems = false;
+					gem = false;
 					vineShield = true;
 				}
 				break;
@@ -1293,22 +1391,22 @@ public class Game{
 				output += "1. Nutritious Water\n2. Scorch\n3. Vine Shield\n4. Cure\n5. Flare\n6. Vine Trap";
 				c = JOptionPane.showInputDialog(null, output);
 				if(c.equals("1") && !nutritiousWater){
-					gems = false;
+					gem = false;
 					nutritiousWater = true;
 				}else if(c.equals("2") && !scorch){
-					gems = false;
+					gem = false;
 					scorch = true;
 				}else if(c.equals("3") && !vineShield){
-					gems = false;
+					gem = false;
 					vineShield = true;
 				}else if(c.equals("4") && !cure){
-					gems = false;
+					gem = false;
 					cure = true;
 				}else if(c.equals("5") && !flare){
-					gems = false;
+					gem = false;
 					flare = true;
 				}else if(c.equals("6") && !vineTrap){
-					gems = false;
+					gem = false;
 					vineTrap = true;
 				}
 				break;
@@ -1318,17 +1416,20 @@ public class Game{
 			output = "";
 		}
 		loc++;
-		gems = true;
-		while (gems){
+		gem = true;
+		while (gem){
 			c = JOptionPane.showInputDialog("Would you like to save your game? (y/n)");
 			if(c.equalsIgnoreCase("y")){
 				save();
-				gems = false;
+				gem = false;
 			}else if(c.equalsIgnoreCase("n")){
-				gems = false;
+				gem = false;
 			}
 		}
 	}
+	/**
+	 * Displays the menu
+	 * */
 	private void menu() throws FileNotFoundException{
 		String c = JOptionPane.showInputDialog("Would you like to use the menu (m) or continue (Any other key)?");
 		if (c.equals("m")){
@@ -1558,6 +1659,9 @@ public class Game{
 			}
 		}
 	}
+	/**
+	 * Saves the game
+	 * */
 	private void save() throws FileNotFoundException{
 		PrintWriter writer = new PrintWriter("C:/Users/Public/Save");
 		writer.print("");
@@ -1615,6 +1719,9 @@ public class Game{
 		writer.print(loc);
 		writer.close();
 	}
+	/**
+	 * Loads the game
+	 * */
 	private void load() throws FileNotFoundException{
         Scanner s = new Scanner(new File ("C:/Users/Public/Save"));
         hp = s.nextInt();

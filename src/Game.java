@@ -1444,7 +1444,7 @@ public class Game{
 					output += "What would you like to equip?";
 					c = JOptionPane.showInputDialog(output);
 					int n = Integer.parseInt(c);
-					if(n > 0 || n < helm.size() + 1){
+					if(n > 0 && n < helm.size() + 1){
 						String N = helm.get(n - 1);
 						switch(N){
 						case "Nothing":
@@ -1484,7 +1484,7 @@ public class Game{
 					output += "What would you like to equip?";
 					c = JOptionPane.showInputDialog(output);
 					int n = Integer.parseInt(c);
-					if(n > 0 || n < armor.size() + 1){
+					if(n > 0 && n < armor.size() + 1){
 						String N = gloves.get(n - 1);
 						switch(N){
 						case "Nothing":
@@ -1512,7 +1512,7 @@ public class Game{
 					output += "What would you like to equip?";
 					c = JOptionPane.showInputDialog(output);
 					int n = Integer.parseInt(c);
-					if(n > 0 || n < armor.size() + 1){
+					if(n > 0 && n < armor.size() + 1){
 						String N = boots.get(n - 1);
 						switch(N){
 						case "Nothing":
@@ -1534,7 +1534,7 @@ public class Game{
 					output += "What would you like to equip?";
 					c = JOptionPane.showInputDialog(output);
 					int n = Integer.parseInt(c);
-					if(n > 0 || n < armor.size() + 1){
+					if(n > 0 && n < armor.size() + 1){
 						String N = armor.get(n - 1);
 						switch(N){
 						case "Nothing":

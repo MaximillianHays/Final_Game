@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Game{
 	/** Player's max HP */
-	private int hp = 10;
+	private int maxHp = 10;
 	/** Player's max SP */
-	private int sp = 1;
+	private int maxSp = 1;
 	/** Player's unmodified defense */
 	private int def = 0;
 	/** Player's defense from armor */
@@ -19,9 +19,9 @@ public class Game{
 	/** Player's unmodified speed */
 	private int spd = 1;
 	/** Player's current HP */
-	private int tHp = hp;
+	private int tHp = maxHp;
 	/** Player's current SP */
-	private int tSp = sp;
+	private int tSp = maxSp;
 	/** Player's current attack */
 	private int tAtk = atk;
 	/** Player's current defense */
@@ -46,6 +46,7 @@ public class Game{
 	private int xpr = 10;
 	/** How much xpg will increase when the player's LV increases */
 	private int xpi = 20;
+	//TODO Replace with temporary variable in method.
 	/** How many times the player's LV will increase */
 	private int lvup;
 	/** Player's LV */
@@ -120,7 +121,7 @@ public class Game{
 	private ArrayList<String> armor = new ArrayList<String>();
 	/** What boots the player owns */
 	private ArrayList<String> boots = new ArrayList<String>();
-	/** Where the player is */
+	/** What world the player is in */
 	private int loc = 1;
 	/** What text should be displayed */
 	private String output = "";
@@ -270,7 +271,7 @@ public class Game{
 	}
 	/**
 	 * Starts a battle against a random enemy
-	 * @param d - The difficulty of the encounter
+	 * @param d The difficulty of the encounter
 	 * */
 	private void encounter(int d) throws FileNotFoundException{
 		double r = Math.random() * 10;
@@ -380,7 +381,7 @@ public class Game{
 	}
 	/**
 	 * Causes the player to battle an enemy
-	 * @param eName - The enemy
+	 * @param eName The name of the enemy
 	 * */
 	private void battle(String eName){
 		switch (eName){
@@ -518,7 +519,7 @@ public class Game{
 		while (true) {
 			if (spd >= eSpd){
 				if (ySt == 0){
-					String choice = JOptionPane.showInputDialog("You have " + tHp + "/" + hp + " HP and " + tSp + "/" + sp + " SP.  The " + eName + " has " + eHp + "/" + eMaxhp + " HP and " + eDef + " DEF.  Press l for a list of actions.");
+					String choice = JOptionPane.showInputDialog("You have " + tHp + "/" + maxHp + " HP and " + tSp + "/" + maxSp + " SP.  The " + eName + " has " + eHp + "/" + eMaxhp + " HP and " + eDef + " DEF.  Press l for a list of actions.");
 					if (choice.equals("l")){
 						output = "Punch does " + (2 + gPow + atk) + " damage (p).\nKick does " + (1 + bPow + atk) + " damage and stuns the enemy 50% of the time (k).";
 						if (nutritiousWater){
@@ -769,7 +770,7 @@ public class Game{
 						tHp -= damage(pow, 0, tDef);
 						break;
 					case "squid":
-						if (damage(3, tAtk, eDef) > eHp && !(damage(3, 0, def) > hp) && tDef < 1) {
+						if (damage(3, tAtk, eDef) > eHp && !(damage(3, 0, def) > maxHp) && tDef < 1) {
 							pow = 1;
 							JOptionPane.showMessageDialog(null, "The squid shot ink at you for " + damage(pow, 0, tDef) + " damage!");
 							tHp -= damage(pow, 0, tDef);
@@ -784,7 +785,7 @@ public class Game{
 						}
 						break;
 					case "octopus":
-						if (damage(3, tAtk, eDef) > eHp && !(damage(5, 0, def) > hp) && tDef < 2) {
+						if (damage(3, tAtk, eDef) > eHp && !(damage(5, 0, def) > maxHp) && tDef < 2) {
 							pow = 2;
 							JOptionPane.showMessageDialog(null, "The octopus shot ink at you for " + damage(pow, 0, tDef) + " damage!");
 							tHp -= damage(pow, 0, tDef);
@@ -799,7 +800,7 @@ public class Game{
 						}
 						break;
 					case "kraken":
-						if (damage(3, tAtk, eDef) > eHp && !(damage(11, 0, def) > hp) && tDef < 5) {
+						if (damage(3, tAtk, eDef) > eHp && !(damage(11, 0, def) > maxHp) && tDef < 5) {
 							pow = 5;
 							JOptionPane.showMessageDialog(null, "The kraken shot ink at you for " + damage(pow, 0, tDef) + " damage!");
 							tHp -= damage(pow, 0, tDef);
@@ -814,7 +815,7 @@ public class Game{
 						}
 						break;
 					case "spider":
-						if (damage(3, tAtk, eDef) > eHp && !(damage(3, 0, def) > hp) && tDef < 1) {
+						if (damage(3, tAtk, eDef) > eHp && !(damage(3, 0, def) > maxHp) && tDef < 1) {
 							pow = 1;
 							JOptionPane.showMessageDialog(null, "The spider shot a web at you for " + damage(pow, 0, tDef) + " damage!");
 							tHp -= damage(pow, 0, tDef);
@@ -829,7 +830,7 @@ public class Game{
 						}
 						break;
 					case "wolf spider":
-						if (damage(3, tAtk, eDef) > eHp && !(damage(5, 0, def) > hp) && tDef < 2) {
+						if (damage(3, tAtk, eDef) > eHp && !(damage(5, 0, def) > maxHp) && tDef < 2) {
 							pow = 2;
 							JOptionPane.showMessageDialog(null, "The wolf spider shot a web at you for " + damage(pow, 0, tDef) + " damage!");
 							tHp -= damage(pow, 0, tDef);
@@ -844,7 +845,7 @@ public class Game{
 						}
 						break;
 					case "tarantula":
-						if (damage(3, tAtk, eDef) > eHp && !(damage(11, 0, def) > hp) && tDef < 5) {
+						if (damage(3, tAtk, eDef) > eHp && !(damage(11, 0, def) > maxHp) && tDef < 5) {
 							pow = 5;
 							JOptionPane.showMessageDialog(null, "The tarantula shot a web at you for " + damage(pow, 0, tDef) + " damage!");
 							tHp -= damage(pow, 0, tDef);
@@ -859,7 +860,7 @@ public class Game{
 						}
 						break;
 					case "snake":
-						if (damage(3, tAtk, eDef) > eHp || damage(3, 0, def) > hp) {
+						if (damage(3, tAtk, eDef) > eHp || damage(3, 0, def) > maxHp) {
 							pow = 2;
 							JOptionPane.showMessageDialog(null, "The snake bit you for " + damage(pow, 0, tDef) + " damage!");
 							tHp -= damage(pow, 0, tDef);
@@ -871,7 +872,7 @@ public class Game{
 						}
 						break;
 					case "cobra":
-						if (damage(3, tAtk, eDef) > eHp || damage(5, 0, def) > hp) {
+						if (damage(3, tAtk, eDef) > eHp || damage(5, 0, def) > maxHp) {
 							pow = 4;
 							JOptionPane.showMessageDialog(null, "The cobra bit you for " + damage(pow, 0, tDef) + " damage!");
 							tHp -= damage(pow, 0, tDef);
@@ -883,7 +884,7 @@ public class Game{
 						}
 						break;
 					case "python":
-						if (damage(3, tAtk, eDef) > eHp || damage(11, 0, def) > hp) {
+						if (damage(3, tAtk, eDef) > eHp || damage(11, 0, def) > maxHp) {
 							pow = 10;
 							JOptionPane.showMessageDialog(null, "The python bit you for " + damage(pow, 0, tDef) + " damage!");
 							tHp -= damage(pow, 0, tDef);
@@ -947,12 +948,12 @@ public class Game{
 	}
 	/**
 	 * Lets the player buy items at a shop
-	 * @param s - The shop
+	 * @param s The level of shop
 	 * */
 	private void shop(int s) throws FileNotFoundException{
 		String c;
-		tHp = hp;
-		tSp = sp;
+		tHp = maxHp;
+		tSp = maxSp;
 		while(true){
 			output = "You have " + g + " gold.\nWhat would you like to buy?\n";
 			switch(s){
@@ -1186,10 +1187,11 @@ public class Game{
 	}
 	/**
 	 * If the player can be healed, heals the player
-	 * @param x - Power of the healing
+	 * @param x 1/5 the amount of HP healed and the amount of SP restored.
+	 * @return If the player can be healed
 	 * */
 	private boolean heal(int x){
-		if(tHp < hp || tSp < sp){
+		if(tHp < maxHp || tSp < maxSp){
 			restoreHP(x * 5);
 			restoreSP(x);
 			return true;
@@ -1198,10 +1200,11 @@ public class Game{
 	}
 	/**
 	 * If the player's HP can be restored, restores the player's HP
-	 * @param x - Power of the healing
+	 * @param x Amount of HP restored
+	 * @return If the player can be healed
 	 * */
 	private boolean healHP(int x){
-		if (tHp < hp){
+		if (tHp < maxHp){
 			restoreHP(x);
 			return true;
 		}else{
@@ -1211,12 +1214,12 @@ public class Game{
 		}
 	}
 	/**
-	 * Increases the player's current HP (Should only be used in heal and healHP)
-	 * @param x - How much to increase HP
+	 * Increases the player's current HP, but not over max HP. (Should only be used in heal and healHP)
+	 * @param x How much to increase HP
 	 * */
 	private void restoreHP(int x){
 		tHp += x;
-		while(tHp > hp){
+		while(tHp > maxHp){
 			tHp--;
 			x--;
 		}
@@ -1224,16 +1227,12 @@ public class Game{
 	}
 	/**
 	 * If the player's SP can be restored, restores the player's SP
-	 * @param x - Power of the healing
+	 * @param x Amount of SP restored
+	 * @return If the player can be healed
 	 * */
 	private boolean healSP(int x){
-		if (tSp < sp){
-			tSp += x;
-			while(tSp > sp){
-				tSp--;
-				x--;
-			}
-			JOptionPane.showMessageDialog(null, "You recovered " + x + " SP.");
+		if (tSp < maxSp){
+			restoreSP(x);
 			return true;
 		}else{
 			JOptionPane.showMessageDialog(null, "You are at full SP!");
@@ -1242,12 +1241,12 @@ public class Game{
 		}
 	}
 	/**
-	 * Increases the player's current SP (Should only be used in heal and healSP)
-	 * @param x - How much to increase SP
+	 * Increases the player's current SP, but not over max SP (Should only be used in heal and healSP)
+	 * @param x How much to increase SP
 	 * */
 	private void restoreSP(int x){
 		tSp += x;
-		while(tSp > sp){
+		while(tSp > maxSp){
 			tSp--;
 			x--;
 		}
@@ -1255,9 +1254,10 @@ public class Game{
 	}
 	/**
 	 * Calculates damage
-	 * @param a1 - Power of the attack
-	 * @param a2 - Attack of the attacker
-	 * @param d - Defense of the defender
+	 * @param a1 Attack value of the attack
+	 * @param a2 Attack value of the attacker
+	 * @param d Defense value of the defender
+	 * @return Amount of damage
 	 * */
 	private int damage(int a1, int a2, int d){
 		int x = a1 + a2;
@@ -1268,8 +1268,8 @@ public class Game{
 		return y;
 	}
 	/**
-	 * Gives player rewards for defeating enemies
-	 * @param eName - The defeated enemy
+	 * Gives player EXP, gold, and possibly items for defeating enemies
+	 * @param eName The name of the defeated enemy
 	 * */
 	private void XP(String eName){
 		switch(eName){
@@ -1343,9 +1343,9 @@ public class Game{
 		}
 		xpr = xpg - xp;
 		while (lvup > 0){
-			hp += 5;
+			maxHp += 5;
 			tHp += 5;
-			sp++;
+			maxSp++;
 			tSp++;
 			spd++;
 			gem = true;
@@ -1365,7 +1365,7 @@ public class Game{
 	}
 	/**
 	 * Lets the player choose a spell to learn
-	 * @param s - What spells are available
+	 * @param s What level of spells are available
 	 * */
 	private void gemShop(int s) throws FileNotFoundException{
 		gem = true;
@@ -1434,7 +1434,7 @@ public class Game{
 		String c = JOptionPane.showInputDialog("Would you like to use the menu (m) or continue (Any other key)?");
 		if (c.equals("m")){
 			while(true){
-				JOptionPane.showMessageDialog(null, "You are Level " + lv + ".  You have " + tHp + "/" + hp + " HP and " + tSp + "/" + sp + " SP.  Your ATK is " + atk + ", your DEF is " + def + " (" + (def + ac) + " with armor), and your SPD is " + spd + ".  You need " + xpr + " XP to level up.  You have " + g + " gold. You need to beat "+ b + " more monster(s) to get to the next town.");
+				JOptionPane.showMessageDialog(null, "You are Level " + lv + ".  You have " + tHp + "/" + maxHp + " HP and " + tSp + "/" + maxSp + " SP.  Your ATK is " + atk + ", your DEF is " + def + " (" + (def + ac) + " with armor), and your SPD is " + spd + ".  You need " + xpr + " XP to level up.  You have " + g + " gold. You need to beat " + b + " more monster(s) to get to the next town.");
 				c = JOptionPane.showInputDialog("Helm: " + Ehelm + " | Gloves: " + Egloves + " | Boots: " + Eboots + " | Armor: " + Earmor + " \nWould you like to equip a (h)elm, (g)loves, (b)oots, (a)rmor, use a (p)otion or healing ability, or do (n)othing?");
 				if (c.equals("h")){
 					crown = false;
@@ -1660,13 +1660,13 @@ public class Game{
 		}
 	}
 	/**
-	 * Saves the game
+	 * Saves the game to C:/Users/Public/Save
 	 * */
 	private void save() throws FileNotFoundException{
 		PrintWriter writer = new PrintWriter("C:/Users/Public/Save");
 		writer.print("");
-		writer.println(hp);
-		writer.println(sp);
+		writer.println(maxHp);
+		writer.println(maxSp);
 		writer.println(def);
 		writer.println(ac);
 		writer.println(atk);
@@ -1720,12 +1720,12 @@ public class Game{
 		writer.close();
 	}
 	/**
-	 * Loads the game
+	 * Loads the game from C:/Users/Public/Save
 	 * */
 	private void load() throws FileNotFoundException{
         Scanner s = new Scanner(new File ("C:/Users/Public/Save"));
-        hp = s.nextInt();
-        sp = s.nextInt();
+        maxHp = s.nextInt();
+        maxSp = s.nextInt();
 		def = s.nextInt();
 		ac = s.nextInt();
 		atk = s.nextInt();
@@ -1782,7 +1782,7 @@ public class Game{
 		}
 		loc = s.nextInt();
 		s.close();
-		if(hp > 35 || sp > 6 || def > 5 || atk > 5 || atk + def > 5 || ac > 1 || spd > 6 || g > 500 || gPow > 3 || bPow > 1 || mPow > 3){
+		if(maxHp > 35 || maxSp > 6 || def > 5 || atk > 5 || atk + def > 5 || ac > 1 || spd > 6 || g > 500 || gPow > 3 || bPow > 1 || mPow > 3){
 			JOptionPane.showMessageDialog(null, "Your file is corrupt.");
 			System.exit(0);
 		}
